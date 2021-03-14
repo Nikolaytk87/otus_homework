@@ -18,6 +18,13 @@ EVEN = "even"
 PRIME = "prime"
 
 
+def is_prime(num):
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+
 def filter_numbers(list_of_nums, filter_type):
     """
     функция, которая на вход принимает список из целых чисел,
@@ -32,13 +39,6 @@ def filter_numbers(list_of_nums, filter_type):
     elif filter_type == 'prime':
         result_numbers = [num for num in list_of_nums if is_prime(num) and num > 1]
     return result_numbers
-
-
-def is_prime(num):
-    for i in range(2, int(num ** 0.5) + 1):
-        if num % i == 0:
-            return False
-    return True
 
 
 if __name__ == '__main__':
